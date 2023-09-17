@@ -206,6 +206,7 @@ export class Root {
     }
     /**
      *
+     * @note as of version XXX this does not work. Looping each reset this.$t. It needs to be treated as itterable but I am not sure how
      * @param t
      */
     find(t) {

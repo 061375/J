@@ -1,15 +1,18 @@
+# Basic Usage
+
+## Some examples
     <div id="test" class="loading bar">This is the #test inner HTML</div>
     <div id="test2">This should be removed</div>
     <ul class="bar">
-        <li  class="blah"></li>
-        <li  class="blah"></li>
-        <li  class="blah"></li>
-        <li  class="blah"></li>
-        <li  class="blah"></li>
+        <li class="blah" id="id1"></li>
+		<li class="blah" id="id2"></li>
+		<li class="blah" id="id3"></li>
+		<li class="blah" id="id4"></li>
+		<li class="blah" id="id5"></li>
 	</ul>
     <script type="module" defer>
 	    'use strict';
-	    import  *  as  J  from  './J$/dist/root.js'
+	    import * as J from './J$/dist/root.js'
         // assign J to a const ... I am using $
 	    const  $ = J.$
 	
@@ -20,6 +23,8 @@
 		$('#test').removeClass("bar")
 		$('#test').append(`<input type="text" name="test" />`)
 		$('#test2').remove()
+
+        // loops
 		let i = 0
 		$('.bar li').each(function($t){
             // unlike jQuery, for now it's required that $(this) is replaced with $t
@@ -29,4 +34,29 @@
 		    else  $t.css("color","yellow")
 		    console.log($t.attr("class").get())
 		})
+
+        // ajax to your local server
+        const YOURBASEAJAXURI = '/App_Ajax/AjaxRoute';
+        const YOURDATAMETHOD = 'GetData';
+        const ajax = new Ajax.Base(YOURBASEAJAXURI)
+        .get(YOURDATAMETHOD, {
+            param???: ???,
+            ...  
+            // ideally this will use the correct data type on this end using 
+        }, function (message) {
+            // do whatever
+        })
+
+        // jsonp to call the open weather api
+        const YOURWEATHERAPIKEY = ''
+        const CITY = ''
+        const COUNTRY = ''
+        const jsonp = new Ajax.Base(
+			`https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}&APPID=${YOURWEATHERAPIKEY}&units=imperial"	
+			,{
+				dataType:"jsonp"
+			}).get("",{},function(json){
+                // the resulting JSON
+				console.log(json)
+			})
     </script>
