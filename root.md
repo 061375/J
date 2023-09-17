@@ -1,0 +1,32 @@
+ - **append(data:any)**
+ -- appends a DOM node
+ - **attr(key:string, value:any="")**
+ --  gets or sets an attribute
+ - **css(key:string,value:string)**
+ -- gets or sets the style attribute
+ - **data(key:string, value:any="")**
+ -- gets or sets the data attribute 
+ - **each(callback:Callback<any>)**
+ -- loops the target node(s) - *if iterable*
+ - **eq(n:number)**
+ -- target a node based on its index *zero based* *if iterable*
+ - **exists() :  boolean**
+ -- returns true if the target DOM node exists
+ - **get()**
+ -- currently required at the end of a list of piped requests to get the value of a DOM node :bulb: 
+ - **height(h:string  =  "")**
+ -- get or set the height
+ - **html(data:string="")**
+ -- get or set the innerHTML
+ - **remove()**
+ -- remove the target node
+ - **val()**
+ -- get the value of the target node :bulb:
+ - **width(h:string  =  "")**
+ -- get or set the width
+ - **hasClass(c:string) :  boolean**
+ -- return if the target has the specified class
+ - **addClass(c:string)**
+ -- adds the specified class if it does not exist
+ - **removeClass(c:  string)**
+ -- removes the specified class

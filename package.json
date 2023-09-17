@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "terser": "^5.19.4",
+    "terser-webpack-plugin": "^5.3.9"
+  },
+  "scripts": {
+    "minify": "node minify.js"
+  }
+}
