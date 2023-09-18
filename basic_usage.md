@@ -42,7 +42,8 @@
         .get(YOURDATAMETHOD, {
             param???: ???,
             ...  
-            // ideally this will use the correct data type on this end using 
+            // ideally this will use the correct data type on this end using AjaxData<T> but that's maybe the reason many companies are moving FROM Typescript ( pain in the :star: )
+            // anyways, just use the correct data types on the other end using whatever middleware etc...
         }, function (message) {
             // do whatever
         })
