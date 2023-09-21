@@ -195,7 +195,8 @@ export class Root {
      */
     get()
     {
-        return (this.dom_i == -1 ? this.$t : this.$domo)
+        //console.log("get",this.dom_i,this.$t,this.$domo)
+        return (this.dom_i == -1 ? this.$t : this.$domo[this.dom_i])
     }
     /**
      * 
@@ -262,7 +263,7 @@ export class Root {
         if (this.is_itterable) {
             for(let i=0;i<this.$t.length;i++)
                 this.$domo[i] = this.$t[i]?.value
-        } else this.$domo = this.$t?.value
+        } else this.$t = this.$t?.value
         return this
     }
     /**
@@ -455,7 +456,6 @@ export class Helpers {
         const regex = /^#([a-zA-Z_$][a-zA-Z\d_$]*)$/;
         return regex.test(s);
     }
-
     ///
     ///
     /// WRAPPERS

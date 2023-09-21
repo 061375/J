@@ -2,10 +2,12 @@
   # Versions
 
 
-## :arrow_up:1.0.0.4
+## :arrow_up:1.0.0.5
 
-## :date: September 17, 2023
+## :date: September 21, 2023
 
+*  ## 1.0.0.5
+* :bug: .val() wasn't returning a value if the parent was non-itterable
 *  ## 1.0.0.4
 * :cat: documentation
 *  ## 1.0.0.3

@@ -217,7 +217,8 @@ export class Root {
      * @returns
      */
     get() {
-        return (this.dom_i == -1 ? this.$t : this.$domo);
+        //console.log("get",this.dom_i,this.$t,this.$domo)
+        return (this.dom_i == -1 ? this.$t : this.$domo[this.dom_i]);
     }
     /**
      *
@@ -296,7 +297,7 @@ export class Root {
                 this.$domo[i] = (_a = this.$t[i]) === null || _a === void 0 ? void 0 : _a.value;
         }
         else
-            this.$domo = (_b = this.$t) === null || _b === void 0 ? void 0 : _b.value;
+            this.$t = (_b = this.$t) === null || _b === void 0 ? void 0 : _b.value;
         return this;
     }
     /**
