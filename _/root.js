@@ -129,6 +129,7 @@ export class Root {
         var _a, _b, _c, _d, _e, _f;
         if (!this.checkMissingError())
             return this;
+        //console.log(this.dom_i,value.length,value )
         if (value.length > 0) {
             if (this.dom_i > -1) {
                 this.$t[this.dom_i].dataset[key] = value;
@@ -152,7 +153,7 @@ export class Root {
                         this.$domo[i] = (_d = (_c = this.$t[i]) === null || _c === void 0 ? void 0 : _c.dataset) === null || _d === void 0 ? void 0 : _d[key];
                 }
                 else
-                    this.$domo = (_f = (_e = this.$t) === null || _e === void 0 ? void 0 : _e.dataset) === null || _f === void 0 ? void 0 : _f[key];
+                    this.$t = (_f = (_e = this.$t) === null || _e === void 0 ? void 0 : _e.dataset) === null || _f === void 0 ? void 0 : _f[key];
             }
         }
         //this.dom_i = -1

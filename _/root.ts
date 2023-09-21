@@ -111,10 +111,13 @@ export class Root {
     data(key:string, value:any="")
     {
         if(!this.checkMissingError())return this
+        //console.log(this.dom_i,value.length,value )
         if(value.length > 0) {
+            
             if(this.dom_i > -1) {
                 this.$t[this.dom_i].dataset[key] = value
             } else {
+                
                 if(this.is_itterable) {
                     for(let i=0;i<this.$t.length;i++)
                         this.$domo[i].dataset[key] = value
@@ -127,7 +130,7 @@ export class Root {
                 if(this.is_itterable) {
                     for(let i=0;i<this.$t.length;i++)
                         this.$domo[i] = this.$t[i]?.dataset?.[key]
-                } else this.$domo = this.$t?.dataset?.[key]
+                } else this.$t = this.$t?.dataset?.[key]
             }
         }
         //this.dom_i = -1

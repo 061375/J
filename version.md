@@ -6,8 +6,10 @@
 
 ## :date: September 21, 2023
 
+*  ## 1.0.0.6
+* :beetle: .data() wasn't returning a value if the parent was non-itterable
 *  ## 1.0.0.5
-* :bug: .val() wasn't returning a value if the parent was non-itterable
+* :beetle: .val() wasn't returning a value if the parent was non-itterable
 *  ## 1.0.0.4
 * :cat: documentation
 *  ## 1.0.0.3
