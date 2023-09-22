@@ -167,15 +167,18 @@ export class Root {
     each(callback) {
         if (!this.checkMissingError())
             return this;
+        //console.log("line 140" , this.dom_i,this.is_itterable,this.$t)
         if (this.dom_i > -1) {
             if (this.is_itterable)
                 for (let i = 0; i < this.$t[this.dom_i].length; i++) {
                     this.dom_i = i;
+                    //console.log("Line 152")
                     callback(this);
                 }
         }
         else if (this.is_itterable)
             for (let i = 0; i < this.$t.length; i++) {
+                //console.log("Line 158")
                 this.dom_i = i;
                 callback(this);
             }
@@ -211,7 +214,9 @@ export class Root {
      * @param t
      */
     find(t) {
-        this.$t = $create(t);
+        //this.$t = $create(t)
+        //return this.$t
+        return $create(t);
     }
     /**
      *
@@ -240,6 +245,7 @@ export class Root {
         var _a, _b, _c;
         if (!this.checkMissingError())
             return this;
+        //console.log(this.$t,this.is_itterable,data.length,this.dom_i)
         if (data.length > 0 && this.$t != null) {
             if (this.dom_i > -1) {
                 this.$t[this.dom_i].innerHTML = data;
@@ -253,11 +259,12 @@ export class Root {
         }
         else {
             if (this.dom_i > -1) {
-                this.$t[this.dom_i] = (_a = this.$t[this.dom_i]) === null || _a === void 0 ? void 0 : _a.innerHTML;
+                this.$domo[this.dom_i] = (_a = this.$t[this.dom_i]) === null || _a === void 0 ? void 0 : _a.innerHTML;
             }
-            else if (this.is_itterable) {
-                for (let i = 0; i < this.$t.length; i++)
-                    this.$t[i] = (_b = this.$t[i]) === null || _b === void 0 ? void 0 : _b.innerHTML;
+            else if (this.is_itterable) { // I think the code will never get in here
+                for (let i = 0; i < this.$t.length; i++) {
+                    this.$domo[i] = (_b = this.$t[i]) === null || _b === void 0 ? void 0 : _b.innerHTML;
+                }
             }
             else
                 this.$t = (_c = this.$t) === null || _c === void 0 ? void 0 : _c.innerHTML;

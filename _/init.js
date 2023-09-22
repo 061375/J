@@ -1,5 +1,5 @@
 var _a;
-class Constants {
+export class Constants {
 }
 _a = Constants;
 Constants.CONTACT_ADMIN = "Please contact the administrator contact@jeremyheminger.com";
@@ -33,11 +33,9 @@ Constants.ERRORSTATUS = {
 // MEDIA
 Constants.MEDIAPATH = "/Assets/uploads/";
 Constants.IMAGEPATH = "/Assets/images/";
-export { Constants };
-class Public {
+export class Public {
 }
 Public.ISERRORING = false;
 Public.ISERRORING2 = false;
 Public.SOFTERROR = false;
-export { Public };
 //# sourceMappingURL=init.js.map

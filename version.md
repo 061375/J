@@ -2,10 +2,12 @@
   # Versions
 
 
-## :arrow_up:1.0.0.5
+## :arrow_up:1.0.0.7
 
 ## :date: September 21, 2023
 
+*  ## 1.0.0.7
+* :beetle: .find() was return the previous object and not the new object
 *  ## 1.0.0.6
 * :beetle: .data() wasn't returning a value if the parent was non-itterable
 *  ## 1.0.0.5

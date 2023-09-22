@@ -144,15 +144,18 @@ export class Root {
     each(callback:Callback<any>)
     {
         if(!this.checkMissingError())return this
+        //console.log("line 140" , this.dom_i,this.is_itterable,this.$t)
         if(this.dom_i > -1) {
             if (this.is_itterable)
                 for(let i=0;i<this.$t[this.dom_i].length;i++){
                     this.dom_i = i
+                    //console.log("Line 152")
                     callback(this)
                 }
         } else
             if (this.is_itterable)
                 for(let i=0;i<this.$t.length;i++){
+                    //console.log("Line 158")
                     this.dom_i = i
                     callback(this)
                 }
@@ -185,12 +188,12 @@ export class Root {
     }
     /**
      * 
-     * @note as of version XXX this does not work. Looping each reset this.$t. It needs to be treated as itterable but I am not sure how
+     * @note 
      * @param t 
      */
     find(t:string)
     {
-        this.$t = $create(t)
+        return $create(t)
     } 
     /**
      * 
@@ -218,6 +221,7 @@ export class Root {
     html(data:string="")
     {
         if(!this.checkMissingError())return this
+        //console.log(this.$t,this.is_itterable,data.length,this.dom_i)
         if(data.length > 0 && this.$t != null)
         {
             if(this.dom_i > -1) {
@@ -229,11 +233,12 @@ export class Root {
                 } else this.$t.innerHTML = data
         }else{
             if(this.dom_i > -1) {
-                this.$t[this.dom_i] = this.$t[this.dom_i]?.innerHTML 
-            } else
-                if(this.is_itterable){
-                    for(let i=0;i<this.$t.length;i++)
-                        this.$t[i] = this.$t[i]?.innerHTML 
+                this.$domo[this.dom_i] = this.$t[this.dom_i]?.innerHTML 
+            } else 
+                if(this.is_itterable){ // I think the code will never get in here
+                    for(let i=0;i<this.$t.length;i++){ 
+                        this.$domo[i] = this.$t[i]?.innerHTML 
+                    }
                 } else this.$t = this.$t?.innerHTML
         }
         //this.dom_i = -1
